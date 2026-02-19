@@ -102,7 +102,7 @@ export const seedService = {
             }
 
             // Health Score (Daily)
-            const workoutScore = [1, 2, 4, 6].includes(dayOfWeek) ? 100 : 0;
+            // const workoutScore = [1, 2, 4, 6].includes(dayOfWeek) ? 100 : 0; // Unused
             const ws = 80 + Math.floor(Math.random() * 20);
             const ns = Math.random() > 0.2 ? 90 : 40;
             const ss = Math.min(100, (sleep / 8) * 100);

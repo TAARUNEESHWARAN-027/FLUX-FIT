@@ -30,9 +30,9 @@ export interface PostComment {
 
 // Sample posts so the feed isn't empty
 const DEFAULT_POSTS: CommunityPost[] = [
-    { id: 'demo-1', user_id: 'demo', content: '🏋️ Just hit a new PR on bench press — 100kg for 5 reps! The grind is paying off.', post_type: 'pr', metadata: {}, likes_count: 12, comments_count: 3, created_at: new Date(Date.now() - 3600000).toISOString(), display_name: 'Alex Iron', avatar_url: null, username: 'alex_iron', liked_by_me: false },
-    { id: 'demo-2', user_id: 'demo', content: 'Day 30 of my consistency streak! Haven\'t missed a single workout this month. Discipline > Motivation 💪', post_type: 'milestone', metadata: {}, likes_count: 24, comments_count: 7, created_at: new Date(Date.now() - 7200000).toISOString(), display_name: 'Sarah Lift', avatar_url: null, username: 'sarah_lift', liked_by_me: false },
-    { id: 'demo-3', user_id: 'demo', content: 'Recovery day today. Foam rolling, light stretching, and a cold shower. Your body needs rest to grow. 🧊', post_type: 'general', metadata: {}, likes_count: 8, comments_count: 2, created_at: new Date(Date.now() - 14400000).toISOString(), display_name: 'Mike Grind', avatar_url: null, username: 'mike_grind', liked_by_me: false },
+    { id: 'demo-1', user_id: 'demo', content: '🏋️ Just hit a new PR on bench press — 100kg for 5 reps! The grind is paying off.', post_type: 'pr', metadata: {}, likes_count: 12, comments_count: 3, created_at: new Date(Date.now() - 3600000).toISOString(), display_name: 'Alex Iron', avatar_url: undefined, username: 'alex_iron', liked_by_me: false },
+    { id: 'demo-2', user_id: 'demo', content: 'Day 30 of my consistency streak! Haven\'t missed a single workout this month. Discipline > Motivation 💪', post_type: 'milestone', metadata: {}, likes_count: 24, comments_count: 7, created_at: new Date(Date.now() - 7200000).toISOString(), display_name: 'Sarah Lift', avatar_url: undefined, username: 'sarah_lift', liked_by_me: false },
+    { id: 'demo-3', user_id: 'demo', content: 'Recovery day today. Foam rolling, light stretching, and a cold shower. Your body needs rest to grow. 🧊', post_type: 'general', metadata: {}, likes_count: 8, comments_count: 2, created_at: new Date(Date.now() - 14400000).toISOString(), display_name: 'Mike Grind', avatar_url: undefined, username: 'mike_grind', liked_by_me: false },
 ];
 
 export function useCommunity() {
@@ -85,8 +85,8 @@ export function useCommunity() {
                     comments_count: p.comments_count ?? 0,
                     created_at: p.created_at,
                     display_name: prof?.display_name || 'Anonymous',
-                    avatar_url: prof?.avatar_url || null,
-                    username: prof?.username || null,
+                    avatar_url: prof?.avatar_url || undefined,
+                    username: prof?.username || undefined,
                     liked_by_me: likedPostIds.has(p.id),
                 } as CommunityPost;
             });
